@@ -176,23 +176,55 @@ export default function Hero() {
               className="absolute inset-[18%] z-10"
             >
               <div className="absolute inset-0 rounded-[2.25rem] rotate-3 border border-lime/40 bg-lime/10" aria-hidden />
-              <div className="glass relative h-full w-full overflow-hidden rounded-[2.25rem] p-5 shadow-[0_24px_80px_-24px_rgba(167,139,250,0.55)]">
-                <div className="mb-5 flex items-center gap-2 border-b border-white/10 pb-4">
-                  <span className="h-2.5 w-2.5 rounded-full bg-lime" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-violet" />
-                  <span className="h-2.5 w-2.5 rounded-full border border-white/30" />
-                </div>
-                <div className="font-mono text-xs leading-7 sm:text-sm">
-                  <p><span className="text-violet">const</span> <span className="text-lime">developer</span> = {'{'}</p>
-                  <p className="pl-5 text-fg/80">name: <span className="text-lime">&apos;Kushal&apos;</span>,</p>
-                  <p className="pl-5 text-fg/80">stack: <span className="text-violet">[&apos;React&apos;, &apos;Python&apos;]</span>,</p>
-                  <p className="pl-5 text-fg/80">passion: <span className="text-lime">&apos;Build &amp; Learn&apos;</span>,</p>
-                  <p>{'};'}</p>
-                </div>
+              <div className="glass relative h-full w-full overflow-hidden rounded-[2.25rem] shadow-[0_24px_80px_-24px_rgba(167,139,250,0.55)]">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,rgba(167,139,250,0.18),transparent_58%)]" aria-hidden />
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 300 300"
+                  className="absolute inset-0 h-full w-full"
+                  fill="none"
+                >
+                  <path d="M75 76C112 46 186 45 226 91C269 140 225 220 165 234C108 247 47 211 57 153" stroke="rgba(196,245,106,0.24)" strokeDasharray="4 7" />
+                  <path d="M78 77C113 106 124 185 164 232" stroke="rgba(167,139,250,0.38)" />
+                  <path d="M78 77C128 91 179 78 226 91" stroke="rgba(167,139,250,0.38)" />
+                  <path d="M226 91C204 134 185 189 164 232" stroke="rgba(167,139,250,0.38)" />
+                </svg>
+
                 <motion.div
-                  animate={{ opacity: [0.35, 1, 0.35] }}
-                  transition={{ duration: 1.8, repeat: Infinity }}
-                  className="mt-5 h-1.5 w-16 rounded-full bg-lime"
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute left-1/2 top-1/2 grid h-28 w-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-violet/40 bg-gradient-to-br from-violet/30 via-panel to-lime/10 shadow-[0_0_55px_-12px_rgba(167,139,250,0.75)]"
+                >
+                  <div className="grid h-16 w-16 place-items-center rounded-full border border-white/15 bg-ink/60">
+                    <span className="font-display text-4xl font-bold text-lime" aria-hidden>✦</span>
+                  </div>
+                </motion.div>
+
+                {[
+                  { label: 'DESIGN', className: 'left-4 top-5', delay: 0 },
+                  { label: 'BUILD', className: 'right-4 top-8', delay: 0.5 },
+                  { label: 'LEARN', className: 'bottom-5 left-1/2 -translate-x-1/2', delay: 1 },
+                ].map(({ label, className, delay }) => (
+                  <motion.div
+                    key={label}
+                    animate={{ y: [0, -5, 0] }}
+                    transition={{ duration: 3.5, delay, repeat: Infinity, ease: 'easeInOut' }}
+                    className={`absolute ${className} rounded-full border border-white/10 bg-ink/70 px-3 py-1.5 font-mono text-[9px] tracking-[0.2em] text-fg/80`}
+                  >
+                    {label}
+                  </motion.div>
+                ))}
+
+                <motion.span
+                  animate={{ scale: [0.7, 1.2, 0.7], opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2.4, repeat: Infinity }}
+                  className="absolute left-[27%] top-[48%] h-2 w-2 rounded-full bg-lime shadow-[0_0_14px_#C4F56A]"
+                  aria-hidden
+                />
+                <motion.span
+                  animate={{ scale: [0.7, 1.2, 0.7], opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2.4, delay: 1, repeat: Infinity }}
+                  className="absolute right-[25%] top-[56%] h-2 w-2 rounded-full bg-violet shadow-[0_0_14px_#A78BFA]"
                   aria-hidden
                 />
               </div>

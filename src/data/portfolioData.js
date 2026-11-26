@@ -106,6 +106,19 @@ export const skillCategories = [
       { name: 'JSON Server', icon: 'json' },
     ],
   },
+  {
+    title: 'AI Tools',
+    icon: 'brain',
+    skills: [
+      { name: 'Claude', icon: 'claude' },
+      { name: 'ChatGPT', icon: 'chatgpt' },
+      { name: 'Gemini', icon: 'gemini' },
+      { name: 'Copilot', icon: 'copilot' },
+      { name: 'Cursor', icon: 'cursor' },
+      { name: 'Perplexity', icon: 'perplexity' },
+      { name: 'Antigravity', icon: 'antigravity' },
+    ],
+  },
 ]
 
 export const experience = [
